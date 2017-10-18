@@ -1,0 +1,69 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+
+    defaultConfig {
+        applicationId "com.fenghks.business"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [
+            XG_ACCESS_ID:"2100255808",
+            XG_ACCESS_KEY : "A9T8U9L6EG4Q"
+        ]
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile(name: 'SwipeBackLayout-V1.1.0', ext: 'aar')
+    compile 'joda-time:joda-time:2.9.9'
+    compile 'com.github.bumptech.glide:glide:4.0.0'
+    compile 'com.journeyapps:zxing-android-embedded:3.5.0'
+    compile 'me.relex:circleindicator:1.2.2@aar'
+    compile 'org.xutils:xutils:3.3.40'
+    compile 'com.amap.api:navi-3dmap:latest.integration'
+    compile 'com.amap.api:search:latest.integration'
+    compile 'com.amap.api:location:latest.integration'
+    compile 'com.tencent.xinge:xinge:3.1.8-alpha'
+    compile 'com.tencent.wup:wup:1.0.0.E-alpha'
+    compile 'com.tencent.mid:mid:3.72.4-alpha'
+    /*compile 'com.squareup.retrofit2:retrofit:2.3.0'
+        compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+        compile 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
+        compile 'io.reactivex.rxjava2:rxjava:2.1.2'
+        compile 'io.reactivex.rxjava2:rxandroid:2.0.1'*/
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    compile 'com.alibaba:fastjson:1.2.37'
+    testCompile 'junit:junit:4.12'
+    compile files('libs/btsdk.jar')
+    compile files('libs/Xg_sdk_v3.0_20170301_1733.jar')
+}

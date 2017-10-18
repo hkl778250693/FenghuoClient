@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="page_name">
+        <item>不打印</item>
+        <item>一联</item>
+        <item>两联</item>
+        <item>三联</item>
+        <item>四联</item>
+        <item>五联</item>
+    </string-array>
+    <string-array name="page_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+</resources>

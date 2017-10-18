@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp">
+            <!--android:layout_height="?android:attr/actionBarSize"-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/back_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_10dp"
+                    android:src="@drawable/back_selector" />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/download_list_rb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@null"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="20dp"
+                        android:background="@drawable/map_download_rb_left_bg_selector"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:text="@string/all_cities"
+                        android:textColor="@drawable/map_download_text_selector"
+                        android:textSize="@dimen/crazy_fire_textSize_14sp" />
+
+                    <RadioButton
+                        android:id="@+id/downloaded_list_rb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@null"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="20dp"
+                        android:background="@drawable/map_download_rb_right_bg_selector"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:text="@string/download_manage"
+                        android:textColor="@drawable/map_download_text_selector"
+                        android:textSize="@dimen/crazy_fire_textSize_14sp" />
+                </RadioGroup>
+            </RelativeLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/content_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:flipInterval="30"
+            android:persistentDrawingCache="animation" />
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

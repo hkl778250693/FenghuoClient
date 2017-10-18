@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+        <!--android:layout_height="?android:attr/actionBarSize"-->
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tl_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/colorAccent"/>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_order_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabGravity="fill"
+            app:tabMode="scrollable"
+            android:visibility="gone"
+            app:tabIndicatorColor="@color/colorAccent"
+            app:tabSelectedTextColor="@color/colorAccent"
+            app:tabTextColor="@color/white" />
+
+    </android.support.design.widget.AppBarLayout>
+</LinearLayout>

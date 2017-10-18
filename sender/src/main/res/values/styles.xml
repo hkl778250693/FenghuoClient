@@ -1,0 +1,75 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- no actionbar -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!-- SwipeBackLayout-->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="AppTheme">
+        <item name="actionMenuTextColor">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/colorAccent</item>
+    </style>
+
+    //页面跳转动画
+    <style name="AnimationActivity" parent="@android:style/Animation.Activity" mce_bogus="1">
+        <!--进入一个Acitvity包括两部分，当前Activity退出动画，下一个Activity进入动画-->
+        <item name="android:activityOpenEnterAnimation">@anim/right_in</item>   //下一个Activity进入动画
+        <item name="android:activityOpenExitAnimation">@anim/left_out</item>   //当前Activity退出动画
+
+        <!--跳回一个Activity也包括两部分，当前Activity摧毁动画，上个Actiivty进入动画-->
+        <item name="android:activityCloseEnterAnimation">@anim/left_in</item>   // 上个Activity进入动画
+        <item name="android:activityCloseExitAnimation">@anim/right_out</item>  //当前Activity退出动画
+    </style>
+
+    <!--//选择照片弹出框样式 上下移动-->
+    <style name="camera" >
+        <item name="android:windowEnterAnimation">@anim/camera_enter</item>
+        <item name="android:windowExitAnimation">@anim/camera_out</item>
+    </style>
+
+    <!--渐渐放大样式-->
+    <style name="mywindow">
+        <item name="android:windowEnterAnimation">@anim/enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/out_anim</item>
+    </style>
+
+    <!--从上落下样式-->
+    <style name="window_down_style">
+        <item name="android:windowEnterAnimation">@anim/popshow_anim</item>
+        <item name="android:windowExitAnimation">@anim/out_anim</item>
+    </style>
+
+    <!--从上到下打开样式-->
+    <style name="AnimDown" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_scale_in</item>
+        <item name="android:windowExitAnimation">@anim/push_scale_out</item>
+    </style>
+
+    <!--水平（左进左出）样式-->
+    <style name="AnimHorizontal" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_scale_left_in</item>
+        <item name="android:windowExitAnimation">@anim/push_scale_left_out</item>
+    </style>
+
+    <!--水平（右进右出）样式-->
+    <style name="AnimRight" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_scale_right_in</item>
+        <item name="android:windowExitAnimation">@anim/push_scale_right_out</item>
+    </style>
+
+    <!--底部弹出样式-->
+    <style name="AnimUp" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+
+</resources>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/coordinator_layout">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/sender_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:overScrollMode="never" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/normal_line_high"
+            android:background="@color/gray_blue_thin" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/crazy_fire_main_radioGroup">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/crazy_fire_main_radioGroup"
+                android:background="@android:color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="4dp">
+
+                <RadioButton
+                    android:id="@+id/grabOrder_rb"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:checked="true"
+                    android:drawableTop="@drawable/rb_grab_order_selector"
+                    android:gravity="center"
+                    android:text="@string/grab_orders"
+                    android:textColor="@drawable/radiogroup_text_selector"
+                    android:textSize="@dimen/crazy_fire_radioGroup_text_size" />
+
+                <RadioButton
+                    android:id="@+id/orders_rb"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableTop="@drawable/rb_orders_selector"
+                    android:gravity="center"
+                    android:text="@string/orders"
+                    android:textColor="@drawable/radiogroup_text_selector"
+                    android:textSize="12sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:id="@+id/other_rb"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableTop="@drawable/rb_others_selector"
+                    android:gravity="center"
+                    android:text="@string/other"
+                    android:textColor="@drawable/radiogroup_text_selector"
+                    android:textSize="@dimen/crazy_fire_radioGroup_text_size" />
+
+                <RadioButton
+                    android:id="@+id/mine_rb"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableTop="@drawable/rb_mine_selector"
+                    android:gravity="center"
+                    android:text="@string/mine"
+                    android:textColor="@drawable/radiogroup_text_selector"
+                    android:textSize="@dimen/crazy_fire_radioGroup_text_size" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/merge_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_scan_code_merge"/>
+        </RelativeLayout>
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

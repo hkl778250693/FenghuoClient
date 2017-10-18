@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinator_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_blue_thin">
+
+    <!--<android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_blue_thin"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        </android.support.v4.widget.NestedScrollView>-->
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gray_blue_thin"
+            android:orientation="vertical">
+
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                <android.support.design.widget.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:expandedTitleMarginEnd="64dp"
+                    app:expandedTitleMarginStart="48dp"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:padding="@dimen/padding_10dp"
+                                android:scaleType="centerCrop"
+                                android:src="@mipmap/ic_launcher"
+                                app:layout_collapseMode="pin" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/user_name_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/marginRight_15dp"
+                                    android:layout_marginRight="@dimen/marginRight_15dp"
+                                    android:text="某某某" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="今日送单" />
+
+                                <TextView
+                                    android:id="@+id/send_num_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/margin_10dp"
+                                    android:layout_marginRight="@dimen/margin_10dp"
+                                    android:text="0" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/marginRight_15dp">
+
+                            <TextView
+                                android:id="@+id/clock_in"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/normal_textview_bg_selector"
+                                android:drawablePadding="@dimen/drawable_padding_5dp"
+                                android:drawableTop="@drawable/ic_clock_in"
+                                android:gravity="center"
+                                android:paddingBottom="@dimen/drawable_padding_5dp"
+                                android:paddingTop="@dimen/drawable_padding_5dp"
+                                android:text="@string/clock_in"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/crazy_fire_textSize_14sp" />
+
+                            <TextView
+                                android:id="@+id/check_schedule"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/normal_textview_bg_selector"
+                                android:drawablePadding="@dimen/drawable_padding_5dp"
+                                android:drawableTop="@drawable/ic_check_schedule"
+                                android:gravity="center"
+                                android:paddingBottom="@dimen/drawable_padding_5dp"
+                                android:paddingTop="@dimen/drawable_padding_5dp"
+                                android:text="@string/check_schedule"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/crazy_fire_textSize_14sp" />
+
+                            <TextView
+                                android:id="@+id/trouble_report"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/normal_textview_bg_selector"
+                                android:drawablePadding="@dimen/drawable_padding_5dp"
+                                android:drawableTop="@drawable/ic_trouble_report"
+                                android:gravity="center"
+                                android:paddingBottom="@dimen/drawable_padding_5dp"
+                                android:paddingTop="@dimen/drawable_padding_5dp"
+                                android:text="@string/trouble_report"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/crazy_fire_textSize_14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!--<android.support.v7.widget.Toolbar
+                        android:layout_width="match_parent"
+                        android:layout_height="?android:attr/actionBarSize"
+                        app:layout_collapseMode="pin" />-->
+
+                </android.support.design.widget.CollapsingToolbarLayout>
+            </android.support.design.widget.AppBarLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/padding_10dp"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/send_record"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/layout_white_bg_selector"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/padding_15dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/ic_send_record_24dp"
+                        android:drawablePadding="@dimen/drawable_padding_10dp"
+                        android:drawableStart="@drawable/ic_send_record_24dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/send_record"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/crazy_fire_textSize_14sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_right_arrow" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/normal_line_high"
+                    android:layout_marginLeft="@dimen/marginLeft_15dp"
+                    android:layout_marginStart="@dimen/marginLeft_15dp"
+                    android:background="@color/gray_blue_thin" />
+
+                <LinearLayout
+                    android:id="@+id/send_data"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/layout_white_bg_selector"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/padding_15dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/ic_send_data_24dp"
+                        android:drawablePadding="@dimen/drawable_padding_10dp"
+                        android:drawableStart="@drawable/ic_send_data_24dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/send_data"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/crazy_fire_textSize_14sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_right_arrow" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bluetooth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/padding_10dp"
+                android:background="@drawable/layout_white_bg_selector"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding_15dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/ic_settings_bluetooth_24dp"
+                    android:drawablePadding="@dimen/drawable_padding_10dp"
+                    android:drawableStart="@drawable/ic_settings_bluetooth_24dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/bluetooth"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/crazy_fire_textSize_14sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_right_arrow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/contact_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/padding_10dp"
+                android:background="@drawable/layout_white_bg_selector"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding_15dp">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/ic_call_24dp"
+                    android:drawablePadding="@dimen/drawable_padding_10dp"
+                    android:drawableStart="@drawable/ic_call_24dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/contact_service"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/crazy_fire_textSize_14sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_right_arrow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/settings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/padding_10dp"
+                android:background="@drawable/layout_white_bg_selector"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding_15dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/ic_settings_false_24dp"
+                    android:drawablePadding="@dimen/drawable_padding_10dp"
+                    android:drawableStart="@drawable/ic_settings_false_24dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/send_settings"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/crazy_fire_textSize_14sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_right_arrow" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

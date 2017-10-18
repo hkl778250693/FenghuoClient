@@ -1,0 +1,85 @@
+<resources>
+    <string name="app_name">疯火云接单</string>
+
+    <!-- 权限-->
+    <string name="permission">权限(permission)</string>
+    <string name="no_permissions">应用需要必要的运行权限</string>
+    <string name="permission_rationale">应用需要必要的运行权限</string>
+    <string name="permission_denied">系统通知权限被拒绝</string>
+    <string name="overlay_permission_denied">获取系统通知权限失败</string>
+    <string name="overlay_permission_allowed">获取系统通知权限成功</string>
+    <string name="permission_allowed">系统通知权限被允许</string>
+    <string name="grant_permission">授权</string>
+    <string name="permission_allow">允许</string>
+    <string name="permission_cancel">取消</string>
+    <string name="settings">设置</string>
+    <string name="help">帮助</string>
+    <string name="string_help_text">当前应用缺少必要权限。\n\n请点击\"设置\"-\"权限\"-打开所需权限。\n\n最后点击两次后退按钮，即可返回。</string>
+    <string name="quit">退出</string>
+    <string name="tips_title">温馨提示</string>
+
+    <!--版本-->
+    <string name="version">版本</string>
+    <string name="notice">通知</string>
+    <string name="update">更新</string>
+    <string name="check_new_version">检查更新</string>
+    <string name="new_version_title">发现新版本</string>
+    <string name="new_version_available">有新版本可以使用，赶紧更新吧</string>
+    <string name="no_new_version">暂时没有发现新版本</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+
+    <!-- 订单条目-->
+    <string name="send_now">立即配送</string>
+    <string name="pre_order">预订单 </string>
+    <string name="add_order">添加新订单</string>
+    <string name="order_detail">订单详情</string>
+    <string name="place_order">下单</string>
+    <string name="order_time">下单时间：</string>
+    <string name="pre_send_time">预订</string>
+    <string name="default_time">09:23</string>
+    <string name="cancel_order">退单</string>
+    <string name="print_order">小票</string>
+    <string name="map">地图</string>
+    <string name="take_order">取餐</string>
+    <string name="finish_order">送达</string>
+    <string name="urge_order">催单</string>
+    <string name="wait_finish_order">等待送达</string>
+    <string name="exception_order">异常</string>
+    <string name="kilometre">公里</string>
+    <string name="call_customer">呼叫客户</string>
+    <string name="call_sender">呼叫骑手</string>
+    <string name="start_order_ok">下单成功</string>
+    <string name="chargeback_order_ok">取消订单成功</string>
+    <string name="orders_refresh_success">订单更新完成</string>
+    <string name="confirm_cancel_title">确认退单</string>
+    <string name="urge_order_success">催单成功</string>
+    <string name="confirm_cancel">退单</string>
+    <string name="giveup">不要</string>
+    <string name="confirm_cancel_txt">是否确定要进行退单操作？</string>
+
+    <!--蓝牙    小票打印-->
+    <string name="bluetooth_not_supported">本设备不支持蓝牙，无法使用蓝牙打印功能</string>
+    <string name="open_bluetooth_first">请先打开蓝牙，然后重新点击打印小票。</string>
+    <string name="bluetooth_not_opened">没有开启蓝牙</string>
+    <string name="bluetooth_cant_use">没有打开蓝牙，不能使用蓝牙小票打印功能。</string>
+    <string name="connect_to_print_failed">不能连接到打印机</string>
+    <string name="connect_to_print_lost">已断开与打印机的连接</string>
+    <string name="connect_to_bt_printer">已连接到蓝牙打印机</string>
+    <string name="bluetooth_print">蓝牙打印机</string>
+    <string name="connect_bluetooth_device">连接蓝牙打印机</string>
+    <string name="bluetooth_bonded">已配对</string>
+    <string name="bluetooth_bonding">配对中</string>
+    <string name="bluetooth_unbonded">未配对</string>
+    <string name="print_settings">打印设置</string>
+    <string name="print_qr">打印二维码</string>
+    <string name="print_type_business">商家小票</string>
+    <string name="print_type_kitchen">给后厨</string>
+    <string name="print_type_customer">给顾客</string>
+    <string name="print_type_sender">给配送</string>
+    <string name="print_num">联数</string>
+    <string name="bill_unknown">订单总价</string>
+    <string name="bill_pay_online">在线支付</string>
+    <string name="bill_pay_cash">货到付款</string>
+    <string name="money_yuan">元</string>
+</resources>

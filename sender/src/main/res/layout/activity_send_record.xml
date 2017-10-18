@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/normal_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/refreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/send_record_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/gray_white"
+                        android:scrollbarSize="4dp"
+                        android:scrollbarStyle="insideInset"
+                        android:scrollbarThumbVertical="@color/gray_lite"
+                        android:scrollbars="vertical" />
+
+                    <TextView
+                        android:id="@+id/no_data_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:drawablePadding="10dp"
+                        android:drawableTop="@drawable/ic_no_orders"
+                        android:text="@string/no_send_record"
+                        android:textSize="12sp"
+                        android:visibility="gone"/>
+
+                </RelativeLayout>
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/normal_line_width_0.5dp"
+            android:background="@color/gray_blue_thin"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/succeed_order_rb"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/rb_no_corner_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/succeed_order"
+                android:textColor="@drawable/rg_text_white_and_color_primary_selector"
+                android:textSize="@dimen/crazy_fire_main_textSize_16sp" />
+
+            <RadioButton
+                android:id="@+id/unusual_order_rb"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/rb_no_corner_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/unusual_order"
+                android:textColor="@drawable/rg_text_white_and_color_primary_selector"
+                android:textSize="@dimen/crazy_fire_main_textSize_16sp" />
+        </RadioGroup>
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

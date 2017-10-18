@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.amap.api.maps.MapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/back_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/blue_bg_back_selector"
+            android:drawableStart="@drawable/blue_bg_back_selector"
+            android:text="@string/back"
+            android:textColor="@color/colorPrimary"
+            android:gravity="center_vertical"
+            android:padding="@dimen/padding_15dp"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/marginRight_15dp"/>
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

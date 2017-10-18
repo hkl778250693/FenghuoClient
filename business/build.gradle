@@ -1,0 +1,107 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.3'
+    defaultConfig {
+        applicationId "com.fenghks.business"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "0.51"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        ndk {
+            abiFilters "armeabi"
+            //abiFilters "armeabi", "armeabi-v7a", "x86"
+        }
+    }
+    signingConfigs {
+        release {
+            keyAlias 'fenghuo'
+            keyPassword 'fenghuo'
+            storeFile file('F:/HKL/fenghuo.keystore')
+            storePassword 'taochuangfenghuo'
+        }
+    }
+    /*sourceSets {
+        menu_order {
+            jniLibs.srcDirs = ['libs']
+        }
+    }*/
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.release
+        }
+    }
+    /*productFlavors {
+        necess {
+            ndk {
+                abiFilters "armeabi-v7a"
+                abiFilters "x86"
+                abiFilters "armeabi"
+            }
+        }
+        abiall {
+            ndk {
+                abiFilters "armeabi-v7a"
+                abiFilters "x86"
+                abiFilters "armeabi"
+                abiFilters "arm64-v8a"
+                abiFilters "x86_64"
+            }
+        }
+    }*/
+    productFlavors {
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile(name: 'SwipeBackLayout-V1.1.0', ext: 'aar')
+    //compile 'me.imid.swipebacklayout.lib:library:1.1.0'
+    compile files('libs/fastjson-1.2.24.jar')
+    compile files('libs/btsdk.jar')
+    /*compile 'com.squareup.retrofit2:retrofit:2.2.0'
+                    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
+                    compile 'com.squareup.retrofit2:adapter-rxjava:2.2.0'*/
+    //compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    //compile 'com.akexorcist:bluetoothspp:1.0.0'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'com.android.support:cardview-v7:25.3.1'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'org.xutils:xutils:3.3.40'
+    compile 'com.journeyapps:zxing-android-embedded:3.5.0'
+    compile 'com.amap.api:navi-3dmap:latest.integration'
+    compile 'com.amap.api:search:latest.integration'
+    compile 'com.amap.api:location:latest.integration'
+    compile 'me.relex:circleindicator:1.2.2@aar'
+    compile 'joda-time:joda-time:2.9.9'
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+    compile 'com.jakewharton:butterknife:8.5.1'
+    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3-alpha-2'
+    compile 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.3-alpha-2'
+    compile 'com.baoyz.swipemenulistview:library:1.3.0'
+    compile 'me.everything:overscroll-decor-android:1.0.4'
+    //没有使用特殊Header，可以不加这行
+    testCompile 'junit:junit:4.12'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+}

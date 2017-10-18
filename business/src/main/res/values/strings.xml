@@ -1,0 +1,342 @@
+<resources>
+    <string name="app_name">疯火商家</string>
+    <string name="corporation_name">重庆淘创科技有限公司</string>
+    <string name="menu_search">查找</string>
+    <string name="menu_settings">设置</string>
+    <string name="menu_refresh">更新订单</string>
+    <string name="menu_push">接受订单通知</string>
+    <string name="menu_logout">退出登录</string>
+    <string name="waiting_dev">此功能正在开发中，敬请期待</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="return_back">返回</string>
+
+
+    <!-- 店铺 -->
+    <string name="choose_shop">选择要查看的店铺</string>
+    <string name="shop_default_name">疯火快送</string>
+    <string name="shop_default_address">重庆市渝北区新牌坊莲花国际公馆</string>
+    <string name="title_account_balance">余额</string>
+    <string name="title_shop_number">店铺</string>
+    <string name="logout">退出</string>
+    <string name="charge_money">充值</string>
+
+    <!-- 订单 -->
+    <string name="no_orders">暂时没有订单数据喔</string>
+    <string name="all_order">全部</string>
+    <string name="waiting_place_order">待下单</string>
+    <string name="waiting_order">待取餐</string>
+    <string name="transporting_order">配送中</string>
+    <string name="complete_order">已完成</string>
+    <string name="abnormal_order">异常单</string>
+    <string name="chargeback_order">退单</string>
+    <string name="from_meituan">美团</string>
+    <string name="from_eleme">饿了么</string>
+    <string name="from_baidu">百度外卖</string>
+    <string name="from_koubei">口碑</string>
+    <string name="from_other">其他</string>
+
+    <!-- 订单条目-->
+    <string name="send_now">立即配送</string>
+    <string name="pre_order">预订单 </string>
+    <string name="add_order">添加新订单</string>
+    <string name="order_detail">订单详情</string>
+    <string name="place_order">下单</string>
+    <string name="order_time">下单时间：</string>
+    <string name="pre_send_time">预订</string>
+    <string name="default_time">09:23</string>
+    <string name="cancel_order">退单</string>
+    <string name="print_order">小票</string>
+    <string name="map">地图</string>
+    <string name="take_order">取餐</string>
+    <string name="finish_order">送达</string>
+    <string name="urge_order">催单</string>
+    <string name="wait_finish_order">等待送达</string>
+    <string name="exception_order">异常</string>
+    <string name="kilometre">公里</string>
+    <string name="call_customer">呼叫客户</string>
+    <string name="call_sender">呼叫骑手</string>
+    <string name="start_order_ok">下单成功</string>
+    <string name="chargeback_order_ok">取消订单成功</string>
+    <string name="orders_refresh_success">订单更新完成</string>
+    <string name="confirm_cancel_title">确认退单</string>
+    <string name="urge_order_success">催单成功</string>
+    <string name="confirm_cancel">退单</string>
+    <string name="giveup">不要</string>
+    <string name="confirm_cancel_txt">是否确定要进行退单操作？</string>
+
+
+    <!-- 地图-->
+    <string name="order_map">订单位置</string>
+    <string name="loc_shop">店铺</string>
+    <string name="loc_customer">顾客</string>
+    <string name="loc_sender">配送员</string>
+    <string name="shop_location">店铺位置</string>
+
+    <!-- 创建订单-->
+    <string name="create_order">创建新订单</string>
+    <string name="customer_name">顾客姓名</string>
+    <string name="hint_customer_name">请输入顾客姓名</string>
+    <string name="customer_phone">顾客电话</string>
+    <string name="hint_customer_phone">请输入顾客电话</string>
+    <string name="customer_address">配送地址</string>
+    <string name="hint_customer_address">请输入配送地址</string>
+    <string name="order_no">订单编号</string>
+    <string name="hint_orderno">请输入订单编号</string>
+    <string name="send_time">配送时间</string>
+    <string name="hint_send_time">预订单选时间，即时单留空</string>
+    <string name="food_items">菜品</string>
+    <string name="food_other">珍馐佳肴</string>
+    <string name="food_add">增加</string>
+    <string name="hint_food_name">菜品名</string>
+    <string name="hint_food_price">价格</string>
+    <string name="hint_food_amount">数量</string>
+    <string name="hint_needed">必填</string>
+    <string name="need_customer_name">需要输入客户姓名</string>
+    <string name="need_customer_phone">需要输入客户电话</string>
+    <string name="need_customer_address">需要输入客户地址</string>
+    <string name="need_price">至少需要输入价格</string>
+
+    <string name="confirm_giveup_title">确认放弃</string>
+    <string name="confirm_giveup">放弃</string>
+    <string name="confirm_giveup_txt">是否确定放弃新增订单操作？如果放弃，所有已输入的数据将不会被保留。</string>
+    <string name="add_order_success">添加订单成功</string>
+
+    <!-- 小票打印-->
+    <string name="bluetooth_not_supported">本设备不支持蓝牙，无法使用蓝牙打印功能</string>
+    <string name="open_bluetooth_first">请先打开蓝牙，然后重新点击打印小票。</string>
+    <string name="bluetooth_not_opened">没有开启蓝牙</string>
+    <string name="bluetooth_cant_use">没有开启蓝牙，不能使用蓝牙小票打印功能。</string>
+    <string name="connect_to_print_failed">不能连接到打印机</string>
+    <string name="connect_to_print_lost">已断开与打印机的连接</string>
+    <string name="connect_to_bt_printer">已连接到蓝牙打印机</string>
+    <string name="bluetooth_print">蓝牙打印机</string>
+    <string name="connect_bluetooth_device">连接蓝牙打印机</string>
+    <string name="bluetooth_bonded">已配对</string>
+    <string name="bluetooth_bonding">配对中</string>
+    <string name="bluetooth_unbonded">未配对</string>
+    <string name="print_settings">打印设置</string>
+    <string name="print_qr">打印二维码</string>
+    <string name="print_type_business">商家小票</string>
+    <string name="print_type_kitchen">给后厨</string>
+    <string name="print_type_customer">给顾客</string>
+    <string name="print_type_sender">给配送</string>
+    <string name="print_num">联数</string>
+    <string name="bill_unknown">订单总价</string>
+    <string name="bill_pay_online">在线支付</string>
+    <string name="bill_pay_cash">货到付款</string>
+    <string name="money_yuan">元</string>
+
+    <!--打印机管理-->
+    <string name="printer_type">类型：</string>
+    <string name="usb_printer">USB打印机</string>
+    <string name="network_printer">网络打印机</string>
+    <string name="initialize_tips">您当前进入的店铺还没有初始化哦！初始化后将使您的店铺和云打印设备配对。</string>
+    <string name="activate_tips">您当前的绑定的云打印设备还未激活，是否现在激活？</string>
+    <string name="initialize_succeed">初始化成功！</string>
+    <string name="initialize_failure">初始化失败！您可以点击‘初始化’按钮重试</string>
+    <string name="activate_succeed">激活成功！</string>
+    <string name="activate_failure">激活失败！您可以点击‘激活’按钮重试</string>
+    <string name="activate_device">激活设备</string>
+    <string name="un_activate">反激活设备</string>
+    <string name="device_already_existed">该名称已被使用，请您重新输入！</string>
+    <string name="printer_list_title">打印机列表</string>
+    <string name="printer_list_refresh">刷新列表</string>
+    <string name="printer_list_refresh_failure">未获取到打印机列表</string>
+    <string name="printer_list_refresh_succeed">打印机列表刷新成功</string>
+    <string name="printer_setting">设置</string>
+    <string name="printer_setting_succeed">设置成功</string>
+    <string name="printer_setting_failure">设置失败</string>
+    <string name="printer_pause">停用</string>
+    <string name="printer_pause_succeed">停用成功</string>
+    <string name="printer_pause_failure">停用失败</string>
+    <string name="printer_pause_tip">确定要停用该打印机设备吗？</string>
+    <string name="printer_pauseing">停用中</string>
+    <string name="printer_restart">启用</string>
+    <string name="peinter_restart_failure">启用失败</string>
+    <string name="peinter_restarting">启用中</string>
+    <string name="printer_delete">删除</string>
+    <string name="save_printer_setting">保存设置</string>
+    <string name="delete">删除</string>
+    <string name="delete_tip">确定要删除该打印机设备吗？</string>
+    <string name="null_printer_name_tip">打印机名称不能为空哦！</string>
+    <string name="null_printer_ip_tip">IP地址不能为空哦！</string>
+    <string name="null_printer_port_tip">端口号不能为空哦！</string>
+    <string name="add_printer_suceessful">成功添加一台打印机！</string>
+    <string name="status_nomal">正常使用</string>
+    <string name="modifying">设置中</string>
+    <string name="adding">添加中</string>
+    <string name="add_succeed">添加成功</string>
+    <string name="add_failure">添加失败</string>
+    <string name="deleting">删除中</string>
+    <string name="delete_succeed">删除成功</string>
+    <string name="delete_failure">删除失败</string>
+    <string name="window_title">温馨提示</string>
+    <string name="loading_printers_tips">正在获取打印机列表...</string>
+    <string name="loading_local_printers_tips">正在读取本地打印机列表...</string>
+    <string name="loading_get_state_tips">正在检测店铺状态...</string>
+    <string name="loading_repeat_tips">正在重试...</string>
+    <string name="loading_unactivate_tips">正在反激活...</string>
+    <string name="loading_unregister_tips">正在解绑云设备...</string>
+    <string name="window_tips">抱歉，您不能执行此操作！原因：上一次操作还未完成，您可以继续等待响应或者点击 ‘确定’ 刷新上次操作，是否刷新？</string>
+    <string name="is_sure_unactivate_tips">反激活以后云打印设备将无法正常工作，您确定要反激活设备吗？</string>
+    <string name="is_sure_unregister_tips">解绑云打印设备以后您将无法使用云打印等功能，您确定要解绑云设备吗？</string>
+    <string name="adding_printer_tips">正在添加打印机至云接单设备，请稍后...</string>
+    <string name="repeat_adding_printer_tips">正在重试添加打印机至云接单设备，请稍后...</string>
+    <string name="no_printer_tip">未检测到打印机哦</string>
+    <string name="pause_printer_tips">正在停用打印机，请稍后...</string>
+    <string name="repeat_pause_printer_tips">正在重试停用打印机，请稍后...</string>
+    <string name="delete_printer_tips">正在删除打印机，请稍后...</string>
+    <string name="repeat_delete_printer_tips">正在重试删除打印机，请稍后...</string>
+
+    <!-- 配送员-->
+    <string name="sender">配送员</string>
+
+    <!-- 权限-->
+    <string name="permission">权限(permission)</string>
+    <string name="no_permissions">应用需要必要的运行权限</string>
+    <string name="permission_rationale">应用需要必要的运行权限</string>
+    <string name="permission_denied">系统通知权限被拒绝</string>
+    <string name="overlay_permission_denied">获取系统通知权限失败</string>
+    <string name="overlay_permission_allowed">获取系统通知权限成功</string>
+    <string name="permission_allowed">系统通知权限被允许</string>
+    <string name="grant_permission">授权</string>
+    <string name="permission_allow">允许</string>
+    <string name="permission_cancel">取消</string>
+    <string name="settings">设置</string>
+    <string name="help">帮助</string>
+    <string name="string_help_text">当前应用缺少必要权限。\n\n请点击\"设置\"-\"权限\"-打开所需权限。\n\n最后点击两次后退按钮，即可返回。</string>
+    <string name="quit">退出</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login">登录</string>
+
+    <!-- 错误 -->
+    <string name="network_error">网络故障</string>
+    <string name="other_error">其它网络错误</string>
+
+    <!-- Strings related to login -->
+    <string name="title_account">账号：</string>
+    <string name="business_account">商家账号</string>
+    <string name="shop_account">店铺账号</string>
+    <string name="business_login">商家登录</string>
+    <string name="shop_login">店铺登录</string>
+    <string name="hint_bisiness_account">请输入商家账号</string>
+    <string name="hint_shop_account">请输入店铺账号</string>
+    <string name="title_password">密码：</string>
+    <string name="hint_password">请输入密码</string>
+    <string name="title_login">登  录</string>
+    <string name="title_forget">忘记密码</string>
+    <string name="register_now">立即注册</string>
+    <string name="error_invalid_account">必须输入账号名</string>
+    <string name="error_invalid_password">必须输入密码</string>
+    <string name="error_incorrect_password">密码输入错误</string>
+    <string name="error_field_required">必须填写此字段</string>
+    <string name="fail_login">登录失败</string>
+
+    <!-- 充值-->
+    <string name="recharge_title">商家充值</string>
+    <string name="recharge_content">疯火快送商家账户充值</string>
+    <string name="band_owner">“疯火快送”是重庆淘创科技有限公司旗下品牌</string>
+    <string name="recharge">充值</string>
+    <string name="next">下\t一\t步</string>
+    <string name="charge_value_err">必须输入正确格式的充值金额</string>
+    <string name="recharge_value">充值金额（￥）</string>
+    <string name="hint_recharge_value_wechat">单笔最高3000元</string>
+    <string name="hint_recharge_value_alipay">单笔最高3000元</string>
+    <string name="hint_recharge_limit_wechat">单笔最高3000元，每天最多6000元</string>
+    <string name="hint_recharge_limit_alipay">单笔最高3000元，每天最多6000元</string>
+    <string name="recharge_success">充值成功</string>
+    <string name="recharge_failed">充值失败</string>
+    <string name="recharge_canceled">充值已取消</string>
+
+    <!-- 设置界面-->
+    <string name="setting_print">打印设置</string>
+    <string name="setting_choose_bt_printer">选择蓝牙打印机</string>
+    <string name="setting_choose_network_printer">选择网络打印机</string>
+    <string name="setting_page_print">小票打印设置</string>
+    <string name="setting_print_business">商家联</string>
+    <string name="setting_print_kitchen">后厨联</string>
+    <string name="setting_print_customer">顾客联</string>
+    <string name="setting_print_sender">配送联</string>
+    <string name="setting_print_qr">二维码</string>
+    <string name="setting_print_is_pause">停用</string>
+    <string name="summary_print_business">打印几联商家联，选择0为不打印</string>
+    <string name="summary_print_kitchen">打印几联后厨联，选择0为不打印</string>
+    <string name="summary_print_customer">打印几联顾客联，选择0为不打印</string>
+    <string name="summary_print_sender">打印几联配送联，选择0为不打印</string>
+    <string name="summary_print_qr">是否在小票上打印疯火配送二维码</string>
+    <string name="summary_print_is_pause">是否停用当前USB打印机</string>
+    <string name="summary_receive_notice">是否开启推送通知。请小心操作，关闭通知可能会遗漏重要事项!</string>
+    <string name="setting_receive_notice">接收订单推送通知</string>
+    <string name="setting_notice">通知</string>
+    <string name="setting_other">其它</string>
+    <string name="setting_about">关于</string>
+    <string name="initialize">初始化</string>
+    <string name="obtainPrintList">获取打印列表</string>
+    <string name="printer_manage">打印机管理</string>
+    <string name="setting_about_us">关于我们</string>
+    <string name="version">版本</string>
+    <string name="notice">通知</string>
+    <string name="update">更新</string>
+    <string name="check_new_version">检查更新</string>
+    <string name="new_version_title">发现新版本</string>
+    <string name="new_version_available">有新版本可以使用，赶紧更新吧</string>
+    <string name="no_new_version">暂时没有发现新版本</string>
+    <string name="about_us">\t\t\t\t“疯火快送”是重庆淘创科技有限公司旗下互联网+同城餐饮配送的服务品牌。疯火快送致力于为餐饮商家提供外卖物流的一揽子解决方案,以“让餐饮企业在线经营更便捷”为口号,快速成长为互联网餐饮服务细分领域的领先品牌。</string>
+    <string name="copyright">Copyright © 2015-2017\n重庆淘创科技有限公司</string>
+    <string name="setting_contact_service">联系客服</string>
+    <string name="service_phone">客服电话：400-188-3332</string>
+    <string name="dial_service_phone">tel:4001883332</string>
+    <string name="setting_quit_account">退出登录</string>
+
+    <!-- 授权-->
+    <string name="authorize">授权</string>
+    <string name="auth_bind">授权绑定</string>
+    <string name="unauth_unbind">反授权解绑</string>
+    <string name="third_party_authorize">第三方授权</string>
+    <string name="choose_authorize">请选择要授权的平台</string>
+    <string name="authorize_meituan">美团外卖</string>
+    <string name="authorize_eleme">饿了么</string>
+    <string name="authorize_baidu">百度外卖</string>
+    <string name="authorize_koubei">口碑外卖</string>
+    <string name="authorize_dada">达达</string>
+    <string name="authorize_shansong">闪送</string>
+    <string name="authorize_waiting">暂时还没有接入，还请耐心等待喔。。。</string>
+    <string name="cannot_authorize">参数还有点问题，暂时无法授权。。。</string>
+
+    <!-- Pref Keys-->
+    <string name="pref_print">pref_print</string>
+    <string name="pref_page">pref_page</string>
+    <string name="pref_print_business">pref_print_business</string>
+    <string name="pref_print_kitchen">pref_print_kitchen</string>
+    <string name="pref_print_customer">pref_print_customer</string>
+    <string name="pref_print_sender">pref_print_sender</string>
+    <string name="pref_print_qr">pref_print_qr</string>
+    <string name="pref_quit">pref_quit</string>
+    <string name="pref_notice">pref_nitice</string>
+    <string name="pref_receive_notice">pref_receive_nitice</string>
+    <string name="pref_other">pref_other</string>
+    <string name="pref_initialize">pref_initialize</string>
+    <string name="pref_obtain_print_list">pref_obtain_print_list</string>
+    <string name="pref_about">pref_about</string>
+    <string name="pref_about_us">pref_about_us</string>
+    <string name="pref_contace_service">pref_contace_service</string>
+    <string name="pref_choose_bt_printer">pref_choose_bt_printer</string>
+    <string name="no_print">不打印</string>
+    <string name="one_count">一联</string>
+    <string name="two_count">二联</string>
+    <string name="three_count">三联</string>
+    <string name="four_count">四联</string>
+    <string name="five_count">五联</string>
+    <string name="ip_address">IP地址</string>
+    <string name="port">端口号</string>
+    <string name="ip_address_hint">请输入IP地址</string>
+    <string name="port_hint">默认端口9100</string>
+    <string name="printer_edit_hint">请输入打印机名称</string>
+    <string name="printer_name">打印机名称</string>
+    <string name="finish">完成</string>
+    <string name="un_register_device">解绑云设备</string>
+
+</resources>

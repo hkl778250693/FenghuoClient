@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".LauncherActivity">
+    <item
+        android:id="@+id/search_order"
+        android:title="@string/menu_search"
+        android:icon="@drawable/ic_search_24dp"
+        app:showAsAction="always"/>
+</menu>

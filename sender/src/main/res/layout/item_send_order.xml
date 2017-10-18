@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_5dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="2dp"
+        app:contentPadding="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray_blue_thin"
+                android:padding="@dimen/padding_5dp">
+
+                <TextView
+                    android:id="@+id/business_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="守财炉北京烤鸭"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/client_from_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="饿了么 #1"
+                    android:textColor="@color/text_gray"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:text="@string/wait_gettting_order"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/font_24" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding_5dp"
+                android:layout_marginTop="@dimen/margin_5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/send_address"
+                    android:textColor="@color/text_gray"/>
+
+                <TextView
+                    android:id="@+id/send_address_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="五里店"
+                    android:textColor="@color/text_gray"/>
+
+                <TextView
+                    android:id="@+id/send_distance_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="900m"
+                    android:textColor="@color/text_gray"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/normal_line_high_0.5dp"
+                android:background="@color/gray_blue_thin"
+                android:layout_marginLeft="@dimen/margin_5dp"
+                android:layout_marginRight="@dimen/margin_5dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding_5dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/order_time"
+                        android:textColor="@color/text_gray"/>
+
+                    <TextView
+                        android:id="@+id/order_time_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12：59"
+                        android:textColor="@color/text_gray"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/get_order_time"
+                        android:textColor="@color/text_gray"/>
+
+                    <TextView
+                        android:id="@+id/take_order_time_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12：59"
+                        android:textColor="@color/text_gray"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/finish_order_time_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/finish_send_time"
+                        android:textColor="@color/text_gray"/>
+
+                    <TextView
+                        android:id="@+id/finish_order_time_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12：59"
+                        android:textColor="@color/text_gray"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/function_layout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/navigation_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:background="@drawable/layout_blue_bg_selector"
+                    android:layout_margin="@dimen/margin_5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawableLeft="@drawable/ic_navigation_white_20dp"
+                        android:drawableStart="@drawable/ic_navigation_white_20dp"
+                        android:gravity="center"
+                        android:text="@string/navigation"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/font_24"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/call_business_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_margin="@dimen/margin_5dp"
+                    android:background="@drawable/layout_green_bg_selector">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_call_white_20dp"
+                        android:drawableStart="@drawable/ic_call_white_20dp"
+                        android:gravity="center"
+                        android:text="@string/business"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/font_24"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/call_customer_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_margin="@dimen/margin_5dp"
+                    android:background="@drawable/layout_green_bg_selector">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawableLeft="@drawable/ic_call_white_20dp"
+                        android:drawableStart="@drawable/ic_call_white_20dp"
+                        android:gravity="center"
+                        android:text="@string/customer"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/font_24"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/send_confirm_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:background="@drawable/layout_blue_bg_selector"
+                    android:layout_margin="@dimen/margin_5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawableLeft="@drawable/ic_done_20dp"
+                        android:drawableStart="@drawable/ic_done_20dp"
+                        android:gravity="center"
+                        android:text="@string/confirm_send"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/font_24"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/scan_get_order_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:background="@drawable/layout_blue_bg_selector"
+                    android:layout_margin="@dimen/margin_5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawableLeft="@drawable/ic_scan_20dp"
+                        android:drawableStart="@drawable/ic_scan_20dp"
+                        android:gravity="center"
+                        android:text="@string/scan_code_order"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/font_24"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+    <LinearLayout
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/commom_border_shape_radius_8dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/warm_tips"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/crazy_fire_main_textSize_16sp" />
+
+            <TextView
+                android:id="@+id/content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/crazy_fire_textSize_14sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/lgray" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/cancel_rb"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/radiobutton_selector_left_radius_8dp"
+                android:button="@null"
+                android:gravity="center_horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/cancel"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/crazy_fire_main_textSize_16sp" />
+
+            <View
+                android:layout_width="@dimen/normal_line_high"
+                android:layout_height="match_parent"
+                android:background="@color/lgray" />
+
+            <RadioButton
+                android:id="@+id/do_rb"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/radiobutton_selector_right_radius_8dp"
+                android:button="@null"
+                android:gravity="center_horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/call"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/crazy_fire_main_textSize_16sp" />
+        </RadioGroup>
+    </LinearLayout>
+</LinearLayout>

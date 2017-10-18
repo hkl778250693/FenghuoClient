@@ -1,0 +1,156 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <!--疯火首页-->
+    <dimen name="crazy_fire_main_radioGroup">48dp</dimen>
+    <dimen name="crazy_fire_main_margin">4dp</dimen>
+    <dimen name="crazy_fire_main_textSize">14sp</dimen>
+    <dimen name="crazy_fire_main_view">1dp</dimen>
+
+
+    <dimen name="normal_line_width">0.5dp</dimen>
+    <dimen name="normal_line_high">0.5dp</dimen>
+    <!--首页订单-->
+    <dimen name="crazy_fire_main_order">48dp</dimen>
+    <dimen name="crazy_fire_main_order_textSize">14sp</dimen>
+    <dimen name="crazy_fire_main_order_line">2dp</dimen>
+    <dimen name="crazy_fire_main_order_takeMeal_textPadding">104dp</dimen>
+    <dimen name="crazy_fire_main_order_delivery_textPadding">48dp</dimen>
+    <dimen name="crazy_fire_main_divider_height">3dp</dimen>
+    <dimen name="crazy_fire_main_order_takeMeal_height">56dp</dimen>
+    <dimen name="crazy_fire_main_order_view_weight">168dp</dimen>
+    <!--首页订单中的listview item-->
+    <dimen name="main_order_takeMeal_store_name">24dp</dimen>
+    <dimen name="main_order_takeMeal_store_name_margin">8dp</dimen>
+    <dimen name="main_order_takeMeal_store_name_textSize">18sp</dimen>
+    <dimen name="main_order_takeMeal_view">1dp</dimen>
+    <dimen name="main_order_takeMeal_icon_margin">8dp</dimen>
+    <dimen name="main_order_takeMeal_store_height">96dp</dimen>
+    <dimen name="main_order_takeMeal_store_address_margin">10dp</dimen>
+    <dimen name="main_order_takeMeal_store_address_textSize">14sp</dimen>
+    <dimen name="main_order_takeMeal_store_destination_margin">7dp</dimen>
+    <dimen name="main_order_takeMeal_store_distance_margin">10dp</dimen>
+    <dimen name="main_order_takeMeal_store_meal_time">12sp</dimen>
+    <dimen name="main_order_takeMeal_scanning_height">48dp</dimen>
+    <dimen name="main_order_takeMeal_navigation_textSize">14sp</dimen>
+    <dimen name="main_order_takeMeal_navigation_margin">4dp</dimen>
+    <dimen name="main_order_takeMeal_navigation_to_business">70dp</dimen>
+    <!--派送中-->
+    <dimen name="main_order_delivery_address_height">40dp</dimen>
+    <dimen name="main_order_delivery_location_marginLeft">8dp</dimen>
+    <dimen name="main_order_delivery_location_clock_margin">4dp</dimen>
+    <dimen name="main_order_delivery_address_top">10dp</dimen>
+    <dimen name="main_order_delivery_customer_name">8dp</dimen>
+    <dimen name="main_order_delivery_reminder">2dp</dimen>
+    <dimen name="main_order_image">88dp</dimen>
+    <!--收餐验证-->
+    <dimen name="receipt_verification_textSize">18sp</dimen>
+    <dimen name="receipt_verification_address_textSize">18sp</dimen>
+    <dimen name="receipt_verification_address_top">11dp</dimen>
+    <dimen name="receipt_verification_phone_textSize">14sp</dimen>
+    <dimen name="receipt_verification_package_margin">16dp</dimen>
+    <dimen name="receipt_verification_edit_text_margin">48dp</dimen>
+    <dimen name="receipt_verification_split_line">8dp</dimen>
+    <dimen name="receipt_verification_split_line_padding">4dp</dimen>
+    <!--故障上报-->
+    <dimen name="fault_report_textSize_head">14sp</dimen>
+    <dimen name="fault_report_textSize">12sp</dimen>
+    <dimen name="fault_report_margin_top">48dp</dimen>
+    <dimen name="fault_report_food_not_neat_margin">30dp</dimen>
+    <dimen name="fault_report_vehicle_margin">18dp</dimen>
+    <dimen name="fault_report_classification_margin">40dp</dimen>
+    <dimen name="fault_report_classification_drawable">18dp</dimen>
+    <dimen name="fault_report_plus">20dp</dimen>
+    <!--我-->
+    <dimen name="mine_background_height">180dp</dimen>
+    <dimen name="mine_height">56dp</dimen>
+    <dimen name="mine_today_top">4dp</dimen>
+    <dimen name="mine_view">8dp</dimen>
+    <dimen name="mine_clock_text_margin">4dp</dimen>
+    <dimen name="mine_clock_margin">32dp</dimen>
+    <dimen name="mine_today_send_margin">64dp</dimen>
+    <dimen name="mine_application_height">48dp</dimen>
+    <dimen name="mine_icon_margin">16dp</dimen>
+    <dimen name="mine_icon_to_text_margin">8dp</dimen>
+    <!--应用设置-->
+    <dimen name="application_settings_switch_weight">48dp</dimen>
+    <dimen name="application_settings_switch_height">24dp</dimen>
+    <!--配送数据-->
+    <dimen name="distribution_data_height">36dp</dimen>
+    <dimen name="distribution_data_speed_height">64dp</dimen>
+    <dimen name="distribution_data_single_margin">16dp</dimen>
+    <!--登录-->
+    <dimen name="distribution_clerk_textSize">18sp</dimen>
+    <dimen name="distribution_clerk_text_height">48dp</dimen>
+    <dimen name="distribution_text_line">8dp</dimen>
+    <dimen name="distribution_text_line_two">4dp</dimen>
+    <dimen name="distribution_name">12dp</dimen>
+    <dimen name="distribution_phone_bottom">16dp</dimen>
+    <dimen name="distribution_clerk_head_height">232dp</dimen>
+    <!--订单详情-->
+    <dimen name="order_details_line_height">32dp</dimen>
+    <dimen name="order_details_margin_height">16dp</dimen>
+    <dimen name="order_details_content_height">80dp</dimen>
+    <dimen name="order_details_address_content_height">64dp</dimen>
+    <dimen name="order_details_drawable_padding">8dp</dimen>
+    <dimen name="order_details_help">18dp</dimen>
+    <dimen name="order_details_padding_lr">16dp</dimen>
+    <dimen name="order_details_padding_tb">8dp</dimen>
+    <dimen name="order_details_textSize">14sp</dimen>
+    <!--排班-->
+    <dimen name="scheduling_today_store_height">148dp</dimen>
+    <!--蓝牙设备-->
+    <dimen name="bluetooth_device_height">96dp</dimen>
+    <dimen name="bluetooth_device_prompt_textSize">14sp</dimen>
+    <dimen name="bluetooth_device_margin">18dp</dimen>
+    <dimen name="bluetooth_device_margin_right">60dp</dimen>
+    <dimen name="bluetooth_device_listening_right">24dp</dimen>
+    <dimen name="bluetooth_device_listening_icon">8dp</dimen>
+    <dimen name="bluetooth_device_height_total">96dp</dimen>
+    <!--配送历史-->
+    <dimen name="distribution_record_line_margin">64dp</dimen>
+    <!--配送成功-->
+    <dimen name="distribution_location_height">40dp</dimen>
+    <dimen name="distribution_success_margin_top">16dp</dimen>
+    <dimen name="distribution_tab_height">72dp</dimen>
+    <dimen name="distribution_tab_margin">104dp</dimen>
+    <dimen name="distribution_success_store_margin">16dp</dimen>
+    <dimen name="distribution_success_store_textSize">18sp</dimen>
+    <dimen name="distribution_success_store_size">16sp</dimen>
+    <dimen name="distribution_success_date_margin">8dp</dimen>
+    <dimen name="distribution_location_height_two">32dp</dimen>
+    <dimen name="distribution_success_clock_margin">40dp</dimen>
+    <dimen name="distribution_success_view_width">128dp</dimen>
+    <!--二维码扫描-->
+    <dimen name="QR_code_margin">8dp</dimen>
+    <!--地图-->
+    <dimen name="crazy_fire_mapView_height">200dp</dimen>
+    <dimen name="map_popup_overlay_height">80dp</dimen>
+    <dimen name="map_dial_width">40dp</dimen>
+    <dimen name="map_return_location_margin_l">16dp</dimen>
+    <dimen name="map_return_location_margin_b">16dp</dimen>
+    <dimen name="map_linearLayout_arrow_width">32dp</dimen>
+    <dimen name="map_linearLayout_arrow_height">16dp</dimen>
+    <dimen name="crazy_fire_mapView_weight">268dp</dimen>
+    <dimen name="crazy_fire_mapView">300dp</dimen>
+    <!--dialog-->
+    <dimen name="today_in_store_dialog_height">168dp</dimen>
+    <dimen name="text_margin_left">5dp</dimen>
+    <dimen name="text_margin_top">8dp</dimen>
+    <dimen name="text_address_size">14sp</dimen>
+    <dimen name="button_margin_r">10dp</dimen>
+    <dimen name="button_drawable_padding">32dp</dimen>
+    <dimen name="dialog_padding_one">40dp</dimen>
+    <!--拨打电话dialog-->
+    <dimen name="call_margin_left">72dp</dimen>
+    <!--地图item-->
+    <dimen name="map_item_margin_left">8dp</dimen>
+    <dimen name="map_item_address_height">72dp</dimen>
+    <dimen name="map_item_location">32dp</dimen>
+    <dimen name="main_notification_oval">240dp</dimen>
+    <dimen name="rest_route_search">112dp</dimen>
+    <dimen name="route">68dp</dimen>
+    <dimen name="route_height">128dp</dimen>
+</resources>

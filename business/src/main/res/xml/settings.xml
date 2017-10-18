@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/setting_print"
+        android:key="@string/pref_print"
+        android:persistent="false">
+        <Preference
+            android:title="@string/setting_choose_bt_printer"
+            android:key="@string/pref_choose_bt_printer">
+            <intent
+                android:targetPackage="com.fenghks.business"
+                android:targetClass="com.fenghks.business.print.BluetoothActivity" />
+        </Preference>
+        <ListPreference
+            android:defaultValue="1"
+            android:key="@string/pref_print_business"
+            android:entries="@array/page_name"
+            android:entryValues="@array/page_value"
+            android:dialogTitle="@string/setting_print_business"
+            android:summary="@string/summary_print_business"
+            android:title="@string/setting_print_business" />
+        <ListPreference
+            android:defaultValue="1"
+            android:key="@string/pref_print_kitchen"
+            android:entries="@array/page_name"
+            android:entryValues="@array/page_value"
+            android:dialogTitle="@string/setting_print_kitchen"
+            android:summary="@string/summary_print_kitchen"
+            android:title="@string/setting_print_kitchen" />
+        <ListPreference
+            android:defaultValue="1"
+            android:key="@string/pref_print_customer"
+            android:entries="@array/page_name"
+            android:entryValues="@array/page_value"
+            android:dialogTitle="@string/setting_print_customer"
+            android:summary="@string/summary_print_customer"
+            android:title="@string/setting_print_customer" />
+        <ListPreference
+            android:defaultValue="1"
+            android:key="@string/pref_print_sender"
+            android:entries="@array/page_name"
+            android:entryValues="@array/page_value"
+            android:dialogTitle="@string/setting_print_sender"
+            android:summary="@string/summary_print_sender"
+            android:title="@string/setting_print_sender" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/pref_print_qr"
+            android:summary="@string/summary_print_qr"
+            android:title="@string/setting_print_qr" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/setting_notice"
+        android:key="@string/pref_notice"
+        android:persistent="false">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/pref_receive_notice"
+            android:summary="@string/summary_receive_notice"
+            android:title="@string/setting_receive_notice" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/setting_other"
+        android:key="@string/pref_other"
+        android:persistent="false">
+
+        <Preference
+            android:title="@string/setting_about_us"
+            android:key="@string/pref_about_us"
+            android:persistent="false">
+            <intent
+                android:targetPackage="com.fenghks.business"
+                android:targetClass="com.fenghks.business.business.AboutUsActivity" />
+        </Preference>
+        <Preference
+            android:title="@string/setting_contact_service"
+            android:key="@string/pref_contace_service"
+            android:persistent="false">
+        </Preference>
+
+    </PreferenceCategory>
+
+    <Preference
+        android:title="@string/setting_quit_account"
+        android:key="@string/pref_quit"
+        android:persistent="false">
+    </Preference>
+</PreferenceScreen>

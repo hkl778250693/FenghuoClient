@@ -1,0 +1,25 @@
+{
+  "header": [
+  ],
+  "goods": [
+  ],
+  "bill": [
+  ],
+  "footer": [
+    {
+      "text": "{$qrcode}",
+      "format": 1,
+      "line": 0,
+      "type": 2
+    },
+    {
+      "text": "{$getcode}",
+      "size": 2,
+      "bold": true,
+      "format": 1,
+      "line": 1,
+      "underline": true,
+      "type": 0
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "header": [
+    {
+      "text": "商家小票",
+      "size": 2,
+      "bold": false,
+      "format": 0,
+      "line": 1,
+      "underline": true,
+      "type": 0
+    },
+    {
+      "text": "{$no}",
+      "size": 2,
+      "bold": true,
+      "format": 1,
+      "line": 1,
+      "underline": true,
+      "type": 0
+    },
+    {
+      "text": "{$shopName}",
+      "size": 1,
+      "bold": false,
+      "format": 1,
+      "line": 1,
+      "underline": true,
+      "type": 0
+    },
+    {
+      "text": "{$note}",
+      "size": 2,
+      "bold": false,
+      "format": 0,
+      "line": 1,
+      "underline": true,
+      "type": 0
+    },
+    {
+      "text": "{$orderTime}",
+      "size": 1,
+      "bold": false,
+      "format": 0,
+      "line": 1,
+      "underline": false,
+      "type": 0
+    },
+    {
+      "text": "******************************",
+      "size": 1,
+      "bold": false,
+      "format": 1,
+      "line": 1,
+      "underline": false,
+      "type": 0
+    }
+  ],
+  "goods": [
+    {
+      "name": "商品名",
+      "width": 20,
+      "format": 0,
+      "variable": "name"
+    },
+    {
+      "name": "数量",
+      "width": 4,
+      "format": 1,
+      "variable": "amount"
+    },
+    {
+      "name": "单价",
+      "width": 8,
+      "format": 1,
+      "variable": "price"
+    }
+  ],
+  "extras": [
+    {
+      "name": "商品名",
+      "width": 24,
+      "format": 0,
+      "variable": "name"
+    },
+    {
+      "name": "单价",
+      "width": 8,
+      "format": 1,
+      "variable": "price"
+    }
+  ],
+  "bill": [
+    {
+      "text": "******************************",
+      "size": 1,
+      "bold": false,
+      "format": 1,
+      "line": 1,
+      "underline": false,
+      "type": 0
+    },
+    {
+      "text": "{$billType}",
+      "size": 1,
+      "bold": false,
+      "format": 2,
+      "line": 0,
+      "underline": false,
+      "type": 0
+    },
+    {
+      "text": "{$totalPrice}",
+      "size": 1,
+      "bold": false,
+      "format": 2,
+      "line": 1,
+      "underline": false,
+      "type": 0
+    }
+  ],
+  "footer": [
+    {
+      "text": "{$sendAddress}",
+      "size": 2,
+      "bold": false,
+      "format": 0,
+      "line": 1,
+      "underline": true,
+      "type": 0
+    },
+    {
+      "text": "{$customerName}",
+      "size": 1,
+      "bold": false,
+      "format": 0,
+      "line": 1,
+      "underline": true,
+      "type": 0
+    },
+    {
+      "text": "{$customerPhone}",
+      "size": 2,
+      "bold": true,
+      "format": 0,
+      "line": 1,
+      "underline": true,
+      "type": 0
+    }
+  ]
+}
