@@ -4,42 +4,57 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.amap.api.location.AMapLocation;
+import com.amap.api.location.AMapLocationClient;
+import com.amap.api.location.AMapLocationClientOption;
+import com.amap.api.location.AMapLocationListener;
 import com.amap.api.maps.AMapException;
 import com.amap.api.maps.offlinemap.OfflineMapCity;
 import com.amap.api.maps.offlinemap.OfflineMapManager;
 import com.amap.api.maps.offlinemap.OfflineMapProvince;
 import com.amap.api.maps.offlinemap.OfflineMapStatus;
 import com.fenghks.business.R;
+import com.fenghks.business.custom_view.CommonPopupWindow;
 import com.fenghks.business.offline_map.OfflineDownloadedAdapter;
 import com.fenghks.business.offline_map.OfflineListAdapter;
 import com.fenghks.business.offline_map.OfflinePagerAdapter;
 import com.fenghks.business.utils_amap.ToastUtil;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import me.everything.android.ui.overscroll.OverScrollDecoratorHelper;
 
 /**
  * Created by fenghuo on 2017/10/18.
  */
 
 public class OfflineMapActivity extends BaseActivity implements OfflineMapManager.OfflineMapDownloadListener, OfflineMapManager.OfflineLoadedListener, ViewPager.OnPageChangeListener {
+    public static final String TAG = "OfflineMapActivity";
     @BindView(R.id.back_iv)
     ImageView backIv;
     @BindView(R.id.content_viewpager)
@@ -48,6 +63,8 @@ public class OfflineMapActivity extends BaseActivity implements OfflineMapManage
     RadioButton downloadListRb;
     @BindView(R.id.downloaded_list_rb)
     RadioButton downloadedListRb;
+    @BindView(R.id.coordinator_layout)
+    CoordinatorLayout coordinatorLayout;
     private OfflineMapManager amapManager = null;// 离线地图下载控制器
     private List<OfflineMapProvince> provinceList = new ArrayList<OfflineMapProvince>();// 保存一级目录的省直辖市
     private OfflineListAdapter adapter;
@@ -57,6 +74,9 @@ public class OfflineMapActivity extends BaseActivity implements OfflineMapManage
     private ProgressDialog initDialog;
     private ExpandableListView mAllOfflineMapList;
     private ListView mDownLoadedList;
+    private OfflineMapCity mMapCity;// 离线下载城市
+    private List<OfflineMapCity> cities = new ArrayList<OfflineMapCity>();
+    private boolean cityDownLoadState = false;
 
     /**
      * 更新所有列表
@@ -66,10 +86,8 @@ public class OfflineMapActivity extends BaseActivity implements OfflineMapManage
      * 显示toast log
      */
     private final static int SHOW_MSG = 1;
-
     private final static int DISMISS_INIT_DIALOG = 2;
     private final static int SHOW_INIT_DIALOG = 3;
-
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -102,12 +120,144 @@ public class OfflineMapActivity extends BaseActivity implements OfflineMapManage
             }
         }
     };
+    /**
+     * 声明AMapLocationClient类对象
+     */
+    public AMapLocationClient mLocationClient = null;
+    /**
+     * 声明AMapLocationClientOption对象
+     */
+    public AMapLocationClientOption mLocationOption = null;
+    private CommonPopupWindow window;
+    private RadioButton cancleRb, doRb;
+    private TextView content;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_offline_map);
         ButterKnife.bind(this);
+
+        init();
+    }
+
+    /**
+     * 定位当前城市
+     */
+    public void startLocation() {
+        //初始化定位
+        mLocationClient = new AMapLocationClient(mContext);
+        //设置定位回调监听
+        mLocationClient.setLocationListener(new AMapLocationListener() {
+            @Override
+            public void onLocationChanged(AMapLocation aMapLocation) {
+                if (aMapLocation != null) {
+                    if (aMapLocation.getErrorCode() == 0) {
+                        /**
+                         *  判断当前城市离线地图是否已下载
+                         */
+                        cities = mDownloadedAdapter.getCitiesList();
+                        for (int i = 0; i < cities.size(); i++) {
+                            if (cities.get(i).getState() == OfflineMapStatus.SUCCESS) {
+                                cityDownLoadState = true;
+                                break;
+                            }
+                        }
+                        if (cityDownLoadState) {
+                            Snackbar.make(coordinatorLayout, "当前定位城市 '" + aMapLocation.getCity() + "' 离线地图已下载", Snackbar.LENGTH_LONG).show();  //当前城市离线地图已下载
+                        } else {
+                            //可在其中解析aMapLocation获取相应内容。
+                            downloadMapWindow(aMapLocation.getCity(), "当前定位到 ‘" + aMapLocation.getProvince() + "' '" + aMapLocation.getCity() + "' ，是否下载当前城市的离线地图数据？");
+                        }
+                        StringBuilder sb = new StringBuilder();
+                        //获取定位时间
+                        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA);
+                        Date date = new Date(aMapLocation.getTime());
+                        df.format(date);
+                        sb.append(aMapLocation.getLocationType())     //获取当前定位结果来源，如网络定位结果，详见定位类型表
+                                .append(aMapLocation.getLatitude()).append("，")   //获取纬度
+                                .append(aMapLocation.getLongitude()).append("，")  //获取经度
+                                .append(aMapLocation.getAccuracy()).append("，")   //获取精度信息
+                                .append(aMapLocation.getAddress()).append("，")    //地址，如果option中设置isNeedAddress为false，则没有此结果，网络定位结果中会有地址信息，GPS定位不返回地址信息。
+                                .append(aMapLocation.getCountry()).append("，")   //国家信息
+                                .append(aMapLocation.getProvince()).append("，") //省信息
+                                .append(aMapLocation.getCity()).append("，")     //城市信息
+                                .append(aMapLocation.getDistrict()).append("，")//城区信息
+                                .append(aMapLocation.getStreet()).append("，")   //街道信息
+                                .append(aMapLocation.getStreetNum()).append("，") //街道门牌号信息
+                                .append(aMapLocation.getCityCode()).append("，")  //城市编码
+                                .append(aMapLocation.getAdCode()).append("，")   //地区编码
+                                .append(aMapLocation.getAoiName()).append("，")  //获取当前定位点的AOI信息
+                                .append(aMapLocation.getBuildingId()).append("，")//获取当前室内定位的建筑物Id
+                                .append(aMapLocation.getFloor()).append("，")   //获取当前室内定位的楼层
+                                .append(aMapLocation.getGpsAccuracyStatus());  //获取GPS的当前状态
+                        Log.d(TAG, "当前定位的信息为：" + sb.toString());
+                    } else {
+                        //定位失败时，可通过ErrCode（错误码）信息来确定失败的原因，errInfo是错误信息，详见错误码表。
+                        Log.d(TAG, "location Error, ErrCode:" + aMapLocation.getErrorCode() + ", errInfo:" + aMapLocation.getErrorInfo());
+                    }
+                }
+            }
+        });
+        //初始化AMapLocationClientOption对象
+        mLocationOption = new AMapLocationClientOption();
+        //设置定位模式为AMapLocationMode.Hight_Accuracy，高精度模式。
+        mLocationOption.setLocationMode(AMapLocationClientOption.AMapLocationMode.Hight_Accuracy);
+        mLocationOption.setOnceLocation(true);
+        //设置是否返回地址信息（默认返回地址信息）
+        mLocationOption.setNeedAddress(true);
+        //设置是否允许模拟位置,默认为true，允许模拟位置
+        mLocationOption.setMockEnable(true);
+        //单位是毫秒，默认30000毫秒，建议超时时间不要低于8000毫秒。
+        mLocationOption.setHttpTimeOut(20000);
+        //关闭缓存机制
+        mLocationOption.setLocationCacheEnable(false);
+        //给定位客户端对象设置定位参数
+        mLocationClient.setLocationOption(mLocationOption);
+        //启动定位
+        mLocationClient.startLocation();
+    }
+
+    /**
+     * 弹出是否下载当前城市离线地图框
+     */
+    private void downloadMapWindow(final String cityName, String describeContent) {
+        window = new CommonPopupWindow.Builder(mActivity)
+                .setView(R.layout.popupwindow_contact_service)
+                .setWidthAndHeight(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+                .setAnimationStyle(R.style.AnimDown)
+                .setBackGroundLevel(0.5F)
+                .setViewOnclickListener(new CommonPopupWindow.ViewInterface() {
+                    @Override
+                    public void getChildView(View view, int layoutResId) {
+                        content = (TextView) view.findViewById(R.id.content);
+                        cancleRb = (RadioButton) view.findViewById(R.id.cancel_rb);
+                        doRb = (RadioButton) view.findViewById(R.id.do_rb);
+                    }
+                })
+                .setOutsideTouchable(false)
+                .create();
+        content.setText(describeContent);
+        doRb.setText(R.string.download);
+        window.showAtLocation(coordinatorLayout, Gravity.CENTER, 0, 0);
+        cancleRb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                window.dismiss();
+            }
+        });
+        doRb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                window.dismiss();
+                mContentViewPage.setCurrentItem(1);
+                try {
+                    amapManager.downloadByCityName(cityName);
+                } catch (AMapException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     /**
@@ -168,15 +318,15 @@ public class OfflineMapActivity extends BaseActivity implements OfflineMapManage
         amapManager.setOnOfflineLoadedListener(this);
         initDialog();
         downloadListRb.setChecked(true);
+        startLocation(); //开始定位
     }
 
     private void initViewpage() {
         mPageAdapter = new OfflinePagerAdapter(mContentViewPage,
                 mAllOfflineMapList, mDownLoadedList);
-
         mContentViewPage.setAdapter(mPageAdapter);
         mContentViewPage.setCurrentItem(0);
-        mContentViewPage.setOnPageChangeListener(this);
+        mContentViewPage.addOnPageChangeListener(this);
     }
 
     /**
@@ -199,6 +349,7 @@ public class OfflineMapActivity extends BaseActivity implements OfflineMapManage
         mAllOfflineMapList.setOnGroupCollapseListener(adapter);
         mAllOfflineMapList.setOnGroupExpandListener(adapter);
         mAllOfflineMapList.setGroupIndicator(null);
+        OverScrollDecoratorHelper.setUpOverScroll(mAllOfflineMapList);
     }
 
     /**
@@ -216,15 +367,11 @@ public class OfflineMapActivity extends BaseActivity implements OfflineMapManage
      * 省份-各自子城市<br>
      */
     private void initProvinceListAndCityMap() {
-
-        List<OfflineMapProvince> lists = amapManager
-                .getOfflineMapProvinceList();
-
+        List<OfflineMapProvince> lists = amapManager.getOfflineMapProvinceList();
         provinceList.add(null);
         provinceList.add(null);
         provinceList.add(null);
         // 添加3个null 以防后面添加出现 index out of bounds
-
         ArrayList<OfflineMapCity> cityList = new ArrayList<OfflineMapCity>();// 以市格式保存直辖市、港澳、全国概要图
         ArrayList<OfflineMapCity> gangaoList = new ArrayList<OfflineMapCity>();// 保存港澳城市
         ArrayList<OfflineMapCity> gaiyaotuList = new ArrayList<OfflineMapCity>();// 保存概要图
@@ -276,15 +423,12 @@ public class OfflineMapActivity extends BaseActivity implements OfflineMapManage
      * 初始化已下载列表
      */
     public void initDownloadedList() {
-        mDownLoadedList = (ListView) LayoutInflater.from(
-                OfflineMapActivity.this).inflate(
-                R.layout.offline_downloaded_list, null);
-        AbsListView.LayoutParams params = new AbsListView.LayoutParams(
-                AbsListView.LayoutParams.MATCH_PARENT,
-                AbsListView.LayoutParams.WRAP_CONTENT);
+        mDownLoadedList = (ListView) LayoutInflater.from(OfflineMapActivity.this).inflate(R.layout.offline_downloaded_list, null);
+        AbsListView.LayoutParams params = new AbsListView.LayoutParams(AbsListView.LayoutParams.MATCH_PARENT, AbsListView.LayoutParams.WRAP_CONTENT);
         mDownLoadedList.setLayoutParams(params);
         mDownloadedAdapter = new OfflineDownloadedAdapter(this, amapManager);
         mDownLoadedList.setAdapter(mDownloadedAdapter);
+        OverScrollDecoratorHelper.setUpOverScroll(mDownLoadedList);
     }
 
     /**
@@ -366,45 +510,44 @@ public class OfflineMapActivity extends BaseActivity implements OfflineMapManage
      */
     @Override
     public void onDownload(int status, int completeCode, String downName) {
-
         switch (status) {
             case OfflineMapStatus.SUCCESS:
                 // changeOfflineMapTitle(OfflineMapStatus.SUCCESS, downName);
                 break;
             case OfflineMapStatus.LOADING:
-                Log.d("amap-download", "download: " + completeCode + "%" + ","
+                Log.d(TAG, "download: " + completeCode + "%" + ","
                         + downName);
                 // changeOfflineMapTitle(OfflineMapStatus.LOADING, downName);
                 break;
             case OfflineMapStatus.UNZIP:
-                Log.d("amap-unzip", "unzip: " + completeCode + "%" + "," + downName);
+                Log.d(TAG, "unzip: " + completeCode + "%" + "," + downName);
                 // changeOfflineMapTitle(OfflineMapStatus.UNZIP);
                 // changeOfflineMapTitle(OfflineMapStatus.UNZIP, downName);
                 break;
             case OfflineMapStatus.WAITING:
-                Log.d("amap-waiting", "WAITING: " + completeCode + "%" + ","
+                Log.d(TAG, "WAITING: " + completeCode + "%" + ","
                         + downName);
                 break;
             case OfflineMapStatus.PAUSE:
-                Log.d("amap-pause", "pause: " + completeCode + "%" + "," + downName);
+                Log.d(TAG, "pause: " + completeCode + "%" + "," + downName);
                 break;
             case OfflineMapStatus.STOP:
                 break;
             case OfflineMapStatus.ERROR:
-                Log.e("amap-download", "download: " + " ERROR " + downName);
+                Log.e(TAG, "download: " + " ERROR " + downName);
                 break;
             case OfflineMapStatus.EXCEPTION_AMAP:
-                Log.e("amap-download", "download: " + " EXCEPTION_AMAP " + downName);
+                Log.e(TAG, "download: " + " EXCEPTION_AMAP " + downName);
                 break;
             case OfflineMapStatus.EXCEPTION_NETWORK_LOADING:
-                Log.e("amap-download", "download: " + " EXCEPTION_NETWORK_LOADING "
+                Log.e(TAG, "download: " + " EXCEPTION_NETWORK_LOADING "
                         + downName);
                 Toast.makeText(OfflineMapActivity.this, "网络异常", Toast.LENGTH_SHORT)
                         .show();
                 amapManager.pause();
                 break;
             case OfflineMapStatus.EXCEPTION_SDCARD:
-                Log.e("amap-download", "download: " + " EXCEPTION_SDCARD "
+                Log.e(TAG, "download: " + " EXCEPTION_SDCARD "
                         + downName);
                 break;
             default:
@@ -419,7 +562,7 @@ public class OfflineMapActivity extends BaseActivity implements OfflineMapManage
     @Override
     public void onCheckUpdate(boolean hasNew, String name) {
         // TODO Auto-generated method stub
-        Log.i("amap-demo", "onCheckUpdate " + name + " : " + hasNew);
+        Log.i(TAG, "onCheckUpdate " + name + " : " + hasNew);
         Message message = new Message();
         message.what = SHOW_MSG;
         message.obj = "CheckUpdate " + name + " : " + hasNew;
@@ -429,7 +572,7 @@ public class OfflineMapActivity extends BaseActivity implements OfflineMapManage
     @Override
     public void onRemove(boolean success, String name, String describe) {
         // TODO Auto-generated method stub
-        Log.i("amap-demo", "onRemove " + name + " : " + success + " , "
+        Log.i(TAG, "onRemove " + name + " : " + success + " , "
                 + describe);
         handler.sendEmptyMessage(UPDATE_LIST);
 
@@ -454,10 +597,10 @@ public class OfflineMapActivity extends BaseActivity implements OfflineMapManage
     public void onPageSelected(int arg0) {
         switch (arg0) {
             case 0:
-
+                downloadListRb.setChecked(true);
                 break;
             case 1:
-
+                downloadedListRb.setChecked(true);
                 break;
         }
         handler.sendEmptyMessage(UPDATE_LIST);

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinator_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -17,21 +17,25 @@
             <!--android:layout_height="?android:attr/actionBarSize"-->
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_5dp">
 
                 <ImageView
                     android:id="@+id/back_iv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/padding_10dp"
-                    android:src="@drawable/back_selector" />
+                    android:src="@drawable/back_selector"
+                    android:layout_centerVertical="true"/>
 
                 <RadioGroup
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:layout_centerVertical="true"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:background="@drawable/map_rg_bg_shape"
+                    android:padding="@dimen/normal_line_width_0.5dp">
 
                     <RadioButton
                         android:id="@+id/download_list_rb"

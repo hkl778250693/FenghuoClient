@@ -101,4 +101,5 @@
     <string name="commit">提交</string>
     <string name="all_cities">所有城市</string>
     <string name="download_manage">下载管理</string>
+    <string name="download">下载</string>
 </resources>

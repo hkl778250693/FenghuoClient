@@ -14,7 +14,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * 
+ *
  * 维护已经下载和下载过程中的列表
  */
 public class OfflineDownloadedAdapter extends BaseAdapter {
@@ -26,9 +26,9 @@ public class OfflineDownloadedAdapter extends BaseAdapter {
 	private Context mContext;
 
 	private OfflineChild currentOfflineChild;
-	
+
 	public OfflineDownloadedAdapter(Context context,
-			OfflineMapManager offlineMapManager) {
+									OfflineMapManager offlineMapManager) {
 		this.mContext = context;
 		this.mOfflineMapManager = offlineMapManager;
 		initCityList();
@@ -63,11 +63,14 @@ public class OfflineDownloadedAdapter extends BaseAdapter {
 		cities.addAll(mOfflineMapManager.getDownloadOfflineMapCityList());
 		cities.addAll(mOfflineMapManager.getDownloadingCityList());
 		Log.d("amap", "Offline Downloading notifyData getDownloadingCityList cost: " + (System.currentTimeMillis() -start));
-		
+
 		start = System.currentTimeMillis();
 		notifyDataSetChanged();
 		Log.d("amap", "Offline Downloading notifyData notifyDataSetChanged cost: " + (System.currentTimeMillis() -start));
-		
+	}
+
+	public List<OfflineMapCity> getCitiesList(){
+		return cities;
 	}
 
 	@Override
