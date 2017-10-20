@@ -1,16 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinator_layout">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include
-            layout="@layout/normal_header"
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp">
+            <!--android:layout_height="?android:attr/actionBarSize"-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/back_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_10dp"
+                    android:src="@drawable/back_selector" />
+
+                <android.support.v7.widget.Toolbar
+                    android:layout_width="wrap_content"
+                    android:layout_height="?android:attr/actionBarSize"
+                    android:background="?attr/colorPrimary"
+                    app:layout_scrollFlags="scroll"
+                    app:title="故障上报"
+                    app:titleTextColor="@color/colorAccent" />
+            </LinearLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/padding_10dp">
+
+                <LinearLayout
+                    android:id="@+id/choose_trouble_reason"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/normal_layout_border_selector"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/padding_10dp">
+
+                    <TextView
+                        android:id="@+id/trouble_reason_tv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="发生交通事故"
+                        android:textColor="@color/text_gray"
+                        android:textSize="@dimen/crazy_fire_textSize_14sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_arrow_down_yellow_24dp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/add_picture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:contentDescription="@string/trouble_picture"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/add_picture_selector" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:text="@string/upload_picture_hint" />
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/report_cardview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="30dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/colorAccent"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="2dp"
+                    app:contentPaddingBottom="@dimen/padding_15dp"
+                    app:contentPaddingTop="@dimen/padding_15dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/report"
+                        android:textColor="@android:color/white" />
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

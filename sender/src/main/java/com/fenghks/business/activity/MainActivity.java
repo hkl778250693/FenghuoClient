@@ -238,7 +238,7 @@ public class MainActivity extends AppCompatActivity {
      * 并单操作提示
      */
     private void MergeOrderWindow() {
-        window = new CommonPopupWindow.Builder(this)
+        window = new CommonPopupWindow.Builder(mActivity)
                 .setView(R.layout.popupwindow_contact_service)
                 .setWidthAndHeight(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
                 .setAnimationStyle(R.style.AnimUp)

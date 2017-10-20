@@ -113,7 +113,7 @@
                         android:id="@+id/call_customer_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="35dp"
-                        android:background="@color/colorPrimary"
+                        android:background="@drawable/layout_blue_bg_selector"
                         android:paddingLeft="@dimen/padding_10dp"
                         android:paddingRight="@dimen/padding_10dp"
                         android:text="@string/customer"
@@ -195,7 +195,7 @@
                         android:id="@+id/nav_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="35dp"
-                        android:background="@color/colorPrimary"
+                        android:background="@drawable/layout_blue_bg_selector"
                         android:paddingLeft="@dimen/padding_10dp"
                         android:paddingRight="@dimen/padding_10dp"
                         android:text="@string/navigation"
@@ -278,7 +278,7 @@
                         android:id="@+id/call_business_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="35dp"
-                        android:background="@color/colorPrimary"
+                        android:background="@drawable/layout_blue_bg_selector"
                         android:text="@string/business"
                         android:textColor="@android:color/white"
                         android:paddingLeft="@dimen/padding_10dp"
@@ -294,7 +294,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/get_order_check"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/layout_blue_bg_selector"
             android:textColor="@android:color/white"/>
     </LinearLayout>
 

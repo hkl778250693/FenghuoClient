@@ -7,8 +7,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ScrollView;
 
@@ -28,12 +28,12 @@ public class LoginActivity extends AppCompatActivity {
     EditText phoneNumEdit;
     @BindView(R.id.pw_edit)
     EditText pwEdit;
-    @BindView(R.id.login_btn)
-    Button loginBtn;
     @BindView(R.id.scroll_view)
     ScrollView scrollView;
     @BindView(R.id.coordinator_layout)
     CoordinatorLayout coordinatorLayout;
+    @BindView(R.id.login_cardview)
+    CardView loginCardview;
     private Context mContext;
 
     @Override
@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
         phoneNumEdit.requestFocus();
     }
 
-    @OnClick(R.id.login_btn)
+    @OnClick(R.id.login_cardview)
     public void onViewClicked() {
         Intent intent = new Intent(mContext,MainActivity.class);
         startActivity(intent);

@@ -52,6 +52,7 @@ public class SendOrderListAdapter extends RecyclerView.Adapter<SendOrderListAdap
 
     @Override
     public void onBindViewHolder(final SendOrderViewHolder holder, int position) {
+        order = orderList.get(position);
         /*order = orderList.get(position);
         holder.clientFromTv.setText(order.getClientfrom());
         holder.orderTimeTv.setText(order.getStarttime());
@@ -59,6 +60,7 @@ public class SendOrderListAdapter extends RecyclerView.Adapter<SendOrderListAdap
         holder.sendAddressTv.setText(order.getSendaddress());
         holder.customNameTv.setText(order.getCustomername());
         holder.phoneNumberTv.setText(order.getCustomerphone());*/
+        holder.sendDistanceTv.setText(order.getDistance() + "");
         switch (tag) {
             case AppConstants.TAG_ORDERS:
                 holder.functionLayout.setVisibility(View.VISIBLE);

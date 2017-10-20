@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,6 +18,13 @@ import android.widget.RadioButton;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.amap.api.maps.model.LatLng;
+import com.amap.api.maps.model.Poi;
+import com.amap.api.navi.AmapNaviPage;
+import com.amap.api.navi.AmapNaviParams;
+import com.amap.api.navi.AmapNaviType;
+import com.amap.api.navi.INaviInfoCallback;
+import com.amap.api.navi.model.AMapNaviLocation;
 import com.fenghks.business.AppConstants;
 import com.fenghks.business.R;
 import com.fenghks.business.custom_view.CommonPopupWindow;
@@ -32,6 +40,7 @@ import me.everything.android.ui.overscroll.OverScrollDecoratorHelper;
  */
 
 public class OrderDetailActivity extends BaseActivity {
+    public static final String TAG = "OrderDetailActivity";
     @BindView(R.id.back_iv)
     ImageView backIv;
     @BindView(R.id.tool_bar)
@@ -52,6 +61,7 @@ public class OrderDetailActivity extends BaseActivity {
     CoordinatorLayout coordinatorLayout;
     private CommonPopupWindow window;
     private RadioButton cancleRb, doRb;
+    LatLng destination = new LatLng(29.591462, 106.571911);//店铺位置
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +85,48 @@ public class OrderDetailActivity extends BaseActivity {
                 break;
             case R.id.nav_btn:
                 //导航路线
+                //跳转路线规划导航界面
+                AmapNaviPage.getInstance().showRouteActivity(mContext, new AmapNaviParams(null, null, new Poi("五里店", destination, ""), AmapNaviType.DRIVER), new INaviInfoCallback() {
+                    @Override
+                    public void onInitNaviFailure() {
+                        Log.d(TAG, "onInitNaviFailure");
+                    }
+
+                    @Override
+                    public void onGetNavigationText(String s) {
+                        Log.d(TAG, "onGetNavigationText");
+                    }
+
+                    @Override
+                    public void onLocationChange(AMapNaviLocation aMapNaviLocation) {
+                        Log.d(TAG, "onLocationChange");
+                    }
+
+                    @Override
+                    public void onArriveDestination(boolean b) {
+                        Log.d(TAG, "onArriveDestination");
+                    }
+
+                    @Override
+                    public void onStartNavi(int i) {
+                        Log.d(TAG, "onStartNavi");
+                    }
+
+                    @Override
+                    public void onCalculateRouteSuccess(int[] ints) {
+                        Log.d(TAG, "onCalculateRouteSuccess");
+                    }
+
+                    @Override
+                    public void onCalculateRouteFailure(int i) {
+                        Log.d(TAG, "onCalculateRouteFailure");
+                    }
+
+                    @Override
+                    public void onStopSpeaking() {
+                        Log.d(TAG, "onStopSpeaking");
+                    }
+                });
                 break;
             case R.id.call_business_btn:
                 //拨打商家电话

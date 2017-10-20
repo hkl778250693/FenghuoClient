@@ -164,7 +164,7 @@ public class ToastUtil {
 				break;
 	        }
         } catch (Exception e) {
-            Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG).show();
+            //Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG).show();
             logError(e.getMessage(), rCode);
         }
 	}

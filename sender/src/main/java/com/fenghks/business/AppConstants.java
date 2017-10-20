@@ -95,6 +95,12 @@ public class AppConstants {
     public static final int TAG_BUSINESS = 0;
     public static final int TAG_CUSTOMER = 1;
 
+    /**
+     * 广播action
+     */
+    //地理编码
+    public static final String ACTION_GEOCAODER_RESULT = "action_geocoder_result";
+
     public static final int ON_TIME_ORDER = 0;//即时单
     public static final int PREORDER_ORDER = 1;//预订单
     public static final int ALL_ORDER = -1;//全部订单

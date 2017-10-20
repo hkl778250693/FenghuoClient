@@ -150,10 +150,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_10dp"
-                android:background="@color/colorPrimary"
                 android:gravity="center"
                 android:text="@string/confirm"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:background="@drawable/layout_blue_bg_selector"/>
         </LinearLayout>
     </ScrollView>
 

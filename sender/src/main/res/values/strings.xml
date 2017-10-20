@@ -8,6 +8,7 @@
     <string name="merge_order">并单</string>
     <string name="other">其他</string>
     <string name="no_grab_orders_tips">暂时没有可抢的订单哦！</string>
+    <string name="no_map_record">您还未下载离线地图哦</string>
     <string name="other_content">其他内容</string>
     <string name="clock_in">上班打卡</string>
     <string name="check_schedule">查看排班</string>
@@ -100,6 +101,17 @@
     <string name="_023_67750215">023-67750215</string>
     <string name="commit">提交</string>
     <string name="all_cities">所有城市</string>
-    <string name="download_manage">下载管理</string>
     <string name="download">下载</string>
+    <string name="download_manage">下载管理</string>
+    <string name="suggestion_hint">感谢您的反馈意见</string>
+    <string name="report">上报</string>
+    <string name="upload_picture_hint">上传照片，仅一张，不超过5M</string>
+    <string name="trouble_picture">故障照片</string>
+    <string name="traffic_accident">发生交通事故</string>
+    <string name="vehicle_break_down">车辆发生故障</string>
+    <string name="meal_goods_break_down">餐件损坏</string>
+    <string name="stop_by_law_enforcement">被执法人员拦下</string>
+    <string name="body_discomfort">身体突发不适</string>
+    <string name="take_photo">拍摄</string>
+    <string name="choose_from_album">从手机相册选择</string>
 </resources>

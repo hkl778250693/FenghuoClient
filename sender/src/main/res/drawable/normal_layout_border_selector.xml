@@ -4,13 +4,13 @@
         <shape>
             <corners android:radius="@dimen/border_corner_5dp"/>
             <stroke android:color="@color/colorAccent"
-                android:width="@dimen/normal_line_width_0.5dp"/>
+                android:width="1.0dp"/>
         </shape>
     </item>
     <item android:state_pressed="false">
         <shape>
             <corners android:radius="@dimen/border_corner_5dp"/>
-            <stroke android:color="@color/gray_blue_thin"
+            <stroke android:color="@color/colorAccent"
                 android:width="@dimen/normal_line_width_0.5dp"/>
         </shape>
     </item>

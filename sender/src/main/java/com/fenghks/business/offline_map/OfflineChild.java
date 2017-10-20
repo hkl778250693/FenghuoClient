@@ -53,11 +53,7 @@ public class OfflineChild implements OnClickListener, OnLongClickListener {
 			int completeCode = (Integer) msg.obj;
 			switch (msg.what) {
 			case OfflineMapStatus.LOADING:
-				
-				
 				displyaLoadingStatus(completeCode);
-				
-				
 				break;
 			case OfflineMapStatus.PAUSE:
 				displayPauseStatus(completeCode);

@@ -1,16 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include
-            layout="@layout/normal_header"
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp">
+            <!--android:layout_height="?android:attr/actionBarSize"-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:id="@+id/back_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_10dp"
+                    android:src="@drawable/back_selector"/>
+                <android.support.v7.widget.Toolbar
+                    android:layout_width="wrap_content"
+                    android:layout_height="?android:attr/actionBarSize"
+                    android:background="?attr/colorPrimary"
+                    app:title="排班"
+                    app:titleTextColor="@color/colorAccent"
+                    app:layout_scrollFlags="scroll"/>
+            </LinearLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/layout_white_bg_selector"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:text="今日驻店"
+                        android:textColor="@color/text_gray"
+                        android:textSize="@dimen/crazy_fire_textSize_14sp" />
+
+                    <TextView
+                        android:id="@+id/shop_name"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center_vertical"
+                        android:text="当天没有排班"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/crazy_fire_textSize_14sp" />
+
+                    <Button
+                        android:id="@+id/nav_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:background="@drawable/layout_blue_bg_selector"
+                        android:paddingLeft="@dimen/padding_10dp"
+                        android:paddingRight="@dimen/padding_10dp"
+                        android:text="@string/navigation"
+                        android:textColor="@android:color/white"
+                        android:drawableLeft="@drawable/ic_navigation_white_20dp"
+                        android:drawableStart="@drawable/ic_navigation_white_20dp"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/normal_line_high"
+                    android:background="@color/gray_blue_thin" />
+
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>
